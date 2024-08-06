@@ -1,8 +1,7 @@
 import { MoreVertical, ChevronLast, ChevronFirst } from "lucide-react"
 import { useContext, createContext, useState } from "react"
 import{ AudioWaveform , BookA , Camera , WalletCards , Globe  } from "lucide-react"
-import { Outlet, Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 
 const SidebarContext = createContext()
@@ -56,12 +55,11 @@ function Sidebar({ children }) {
   )
 }
 
-function SidebarItem({ icon, title, text, active, alert }) {
+function SidebarItem({ icon, text, active, alert }) {
   const { expanded } = useContext(SidebarContext)
   
   return (
-    
-      <li
+    <li
       className={`
         relative flex items-center py-2 px-3 my-1
         font-medium rounded-md cursor-pointer
@@ -96,21 +94,16 @@ function SidebarItem({ icon, title, text, active, alert }) {
         </div>
       )}
     </li>
-    
   )
 }
-// hhii
+
 export default function Drawer(){
     return (
-      
-    <div>
-      <Sidebar>
-          
-          <SidebarItem icon={<Globe stroke="white" size ={20}/>} title={"discover"} text={"Discover"} />
-          <SidebarItem icon={<BookA stroke="white" size ={20}/>} title={"dictionary"} text={"Dictionary"} />
-          <SidebarItem icon={<WalletCards stroke="white" size ={20}/>} title={"flashcards"} text={"Flashcards"} />
-          <SidebarItem icon={<Camera stroke="white" size ={20}/>} title={"camera"} text={"Camera"} />
-     </Sidebar>
-    </div>
+    <Sidebar>
+         <a href="/discover"><SidebarItem icon={<Globe stroke="white" size ={20}/>} text={"Discover"} /></a>
+         <a href="/dictionary"><SidebarItem icon={<BookA stroke="white" size ={20}/>} text={"Dictionary"} /></a>
+         <a href="/flashcards"><SidebarItem icon={<WalletCards stroke="white" size ={20}/>} text={"Flashcards"} /></a>
+         <a href="/camera"><SidebarItem icon={<Camera stroke="white" size ={20}/>} text={"Camera"} /></a>
+    </Sidebar>
     )
 }

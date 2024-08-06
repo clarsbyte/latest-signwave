@@ -3,7 +3,7 @@ export default function Home(){
     return (
         <div>Home 
             <ul>
-                <Link to="camera"><li>Hi</li></Link>
+                <li><Link to="camera">plss</Link></li>
             </ul>
         </div>
         

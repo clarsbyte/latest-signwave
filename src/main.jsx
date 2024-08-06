@@ -10,6 +10,7 @@ import Flashcards from './views/Flashcards'
 import Discover from './views/Discover'
 import Dictionary from './views/Dictionary'
 import Camera from './views/Camera'
+import SignUp from "./components/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/camera",
     element: <Camera/>,
+  },
+  {
+    path: "/signup",
+    element: <SignUp/>,
   },
 ]);
 
