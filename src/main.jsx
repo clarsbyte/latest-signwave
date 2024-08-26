@@ -3,6 +3,7 @@ import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter,
   RouterProvider } from "react-router-dom";
 import "./index.css";
+import { Outlet } from "react-router-dom";
 
 import Drawer from "./components/SideBar"
 import Home from "./views/Home";
@@ -11,6 +12,9 @@ import Discover from './views/Discover'
 import Dictionary from './views/Dictionary'
 import Camera from './views/Camera'
 import SignUp from "./components/SignUp";
+import SignIn from "./components/SignIn";
+import Course from "./views/Course";
+
 
 const router = createBrowserRouter([
   {
@@ -19,7 +23,16 @@ const router = createBrowserRouter([
   },
   {
     path: "/discover",
-    element: <Discover/>,
+    element: <Outlet/>,
+    children: [{
+      path: "",
+      element: <Discover/>,
+    },
+    {
+      path: ":id",
+      element: <Course/>,
+    }
+  ]
   },
   {
     path: "/dictionary",
@@ -37,6 +50,10 @@ const router = createBrowserRouter([
     path: "/signup",
     element: <SignUp/>,
   },
+  {
+    path: "/signin",
+    element: <SignIn/>,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

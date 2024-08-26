@@ -20,20 +20,13 @@ import { account } from '../appwrite/config';
         <div className='absolute bg-opacity-50 bg-black h-screen w-screen '> 
         <div className="rounded-xl shadow-xl w-2/5 flex-1 absolute h-2/4 bg-dark items-center left-2/4 top-2/4 -translate-y-2/4 -translate-x-2/4 ">
             <form onSubmit={HandleSignUp} className='flex-1 flex-row m-auto my-3.5 align-middle items-center content-center '>
-                <h2 className="text-white text-3xl flex-1 font-mono font-bold text-center">Sign Up</h2>
+                <h2 className="text-white text-3xl flex-1 font-mono font-bold text-center">Sign In</h2>
                 <input
         onChange={(e) => setEmail(e.target.value)}
         type="email"
         placeholder="Email"
         name="email"
         value={email} className='flex font-DM text-white text-sm w-2/4 h-fit m-auto my-4 p-2 bg-dark border-opacity-80 border-b-2 border-white  items-center content-center'
-      />
-      <input
-        onChange={(e) => setUsername(e.target.value)}
-        type="username"
-        placeholder="Username"
-        name='username'
-        value={username} className='flex font-DM text-white text-sm bg-dark border-b-2 border-white border-opacity-80   w-2/4 h-fit my-4 p-2 m-auto'
       />
       <input
         onChange={(e) => setPassword(e.target.value)}
