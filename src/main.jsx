@@ -14,6 +14,8 @@ import Camera from './views/Camera'
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
 import Course from "./views/Course";
+import Card from "./views/Card";
+import CardMenu from "./views/CardMenu";
 
 
 const router = createBrowserRouter([
@@ -40,7 +42,27 @@ const router = createBrowserRouter([
   },
   {
     path: "/flashcards",
-    element: <Flashcards/>,
+    element: <Outlet/>,
+    children: [
+      {
+        path: "",
+        element: <Flashcards/>
+      },
+      {
+        path: ":id",
+        element: <Outlet/>,
+        children: [
+          {
+            path: "",
+            element: <CardMenu/>
+          },
+          {
+            path: ":id",
+            element: <Card/>
+          }
+        ]
+      }
+    ]
   },
   {
     path: "/camera",

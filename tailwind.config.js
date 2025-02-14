@@ -11,7 +11,11 @@ export default {
       'select' : '#A2AF95',
       'indigo' : '#5973B7',
       'white' : '#FFFFFF',
-      'black' : '#000000'
+      'black' : '#000000',
+      'gray' : '#D9D9D9',
+      'green': '#94EEA2' ,
+      'red' :'#DC9090',
+      'yellow' : '#DFD682'
     },
     extend: {
       fontFamily: {
@@ -19,6 +23,7 @@ export default {
         'DM' : ["DM Sans", 'sans-serif']
       }
     },
+    
   },
   plugins: [],
 }

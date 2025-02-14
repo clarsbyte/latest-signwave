@@ -4,7 +4,6 @@ import { account } from '../appwrite/config';
 
   export default function SignUp(){
     const [password, setPassword] = useState()
-    const [username, setUsername] = useState()
     const [email, setEmail] = useState()
     
     async function HandleSignUp(event){
